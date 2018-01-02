@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    func test(input: String) -> Bool{
+        let TestVariable: String = "test"
+        return (TestVariable == input)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
