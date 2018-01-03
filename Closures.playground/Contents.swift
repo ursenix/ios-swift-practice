@@ -25,6 +25,40 @@ func compareTwoBooks(firstBook: Book, secondBook: Book) -> Bool {
 
 let sortedBooksByPage = allBooks.sorted(by: compareTwoBooks)
 
+// Other way around for closures
+let newSortedBooksOtherway = allBooks.sorted(by: {
+    (firstBook: Book, secondBook: Book) -> Bool
+    in
+    if firstBook.pages <= secondBook.pages{
+        return true
+    } else {
+        return false
+    }
+})
+newSortedBooksOtherway
+
+// Other way around for closures
+let newSortedBooksOtherway1 = allBooks.sorted({
+    if firstBook.pages <= secondBook.pages{ // No need of func declaration
+        return true
+    } else {
+        return false
+    }
+})
+newSortedBooksOtherway1
+
+// Other way around for closures
+let newSortedBooksOtherway2 = allBooks.sorted(){ // block of code outside paranthesis - called "Trailing closure"
+    if firstBook.pages <= secondBook.pages{ // No need of func declaration
+        return true
+    } else {
+        return false
+    }
+}
+newSortedBooksOtherway2
+
+
+/*
 let newSortedBooks = allBooks.sorted { $0.pages <= $1.pages }
 newSortedBooks
 
@@ -34,4 +68,15 @@ booksByNameDesc
 // Filtering
 let booksHavePagesGT150 = allBooks.filter{ $0.pages > 150}
 booksHavePagesGT150
+
+*/
+
+
+
+
+
+
+
+
+
 
