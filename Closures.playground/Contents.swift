@@ -38,8 +38,8 @@ let newSortedBooksOtherway = allBooks.sorted(by: {
 newSortedBooksOtherway
 
 // Other way around for closures
-let newSortedBooksOtherway1 = allBooks.sorted({
-    if firstBook.pages <= secondBook.pages{ // No need of func declaration
+let newSortedBooksOtherway1 = allBooks.sorted(by: {
+    if $0.pages <= $1.pages{ // No need of func declaration
         return true
     } else {
         return false
@@ -48,8 +48,8 @@ let newSortedBooksOtherway1 = allBooks.sorted({
 newSortedBooksOtherway1
 
 // Other way around for closures
-let newSortedBooksOtherway2 = allBooks.sorted(){ // block of code outside paranthesis - called "Trailing closure"
-    if firstBook.pages <= secondBook.pages{ // No need of func declaration
+let newSortedBooksOtherway2 = allBooks.sorted(by:){ // block of code outside paranthesis - called "Trailing closure"
+    if $0.pages <= $1.pages{ // No need of func declaration
         return true
     } else {
         return false
